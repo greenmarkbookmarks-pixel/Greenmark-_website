@@ -3,116 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greenmark 🌱</title>
+<title>Greenmark 🌱 | Sustainable but make it cute</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg, #d4fc79, #96e6a1);
-    color:#1b3a2f;
-    scroll-behavior:smooth;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(135deg,#e6f5e9,#f5f1e8,#d4f0dc);
+    background-size:300% 300%;
+    animation:bgmove 10s ease infinite;
+    color:#1f2e1d;
 }
 
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* NAV */
 header{
+    position:sticky;
+    top:0;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.5);
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
-    background:rgba(255,255,255,0.3);
-    backdrop-filter: blur(10px);
-    position:fixed;
-    width:100%;
-    top:0;
+    padding:15px 8%;
+    border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
 .logo{
-    font-weight:700;
-    font-size:22px;
+    font-family:'DM Serif Display', serif;
+    font-size:24px;
 }
 
 nav a{
     text-decoration:none;
     margin-left:20px;
-    color:#1b3a2f;
+    color:#1f2e1d;
     font-weight:500;
 }
 
+nav a:hover{
+    color:#6B8E23;
+}
+
+/* HERO */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    padding:0 10%;
+    padding:120px 10% 80px;
 }
 
 .hero h1{
+    font-family:'DM Serif Display', serif;
     font-size:50px;
-    font-weight:700;
+    line-height:1.2;
 }
 
 .hero p{
-    margin-top:15px;
+    margin-top:20px;
     font-size:18px;
     max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.btn{
-    margin-top:25px;
-    padding:12px 30px;
-    border-radius:30px;
-    background-color: blueviolet;
-    /* background:#1b3a2f; */
+.cta{
+    margin-top:30px;
+    display:inline-block;
+    padding:14px 35px;
+    border-radius:50px;
+    background:#6B8E23;
     color:white;
     text-decoration:none;
     font-weight:500;
-    transition:0.3s ease;
+    transition:0.3s;
 }
 
-.btn:hover{
-    transform:scale(1.05);
+.cta:hover{
+    transform:scale(1.08);
 }
 
+/* PRODUCTS */
 .section{
-    padding:100px 10%;
+    padding:80px 8%;
     text-align:center;
 }
 
-.cards{
+.section h2{
+    font-family:'DM Serif Display', serif;
+    font-size:34px;
+}
+
+.products{
     display:flex;
+    flex-wrap:wrap;
     gap:25px;
     justify-content:center;
-    flex-wrap:wrap;
     margin-top:40px;
 }
 
 .card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    width:260px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    transition:0.3s ease;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(20px);
+    padding:25px;
+    border-radius:25px;
+    width:270px;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .card:hover{
     transform:translateY(-10px);
 }
 
+.card h3{
+    margin-bottom:10px;
+}
+
+.buy{
+    margin-top:15px;
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:40px;
+    background:#8FBC8F;
+    color:#1f2e1d;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* CONTACT */
+.contact-links{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:center;
+}
+
+.contact-links a{
+    text-decoration:none;
+    font-weight:500;
+    color:#6B8E23;
+}
+
+/* FOOTER */
 footer{
     text-align:center;
-    padding:30px;
-    background:#1b3a2f;
+    padding:25px;
+    background:#1f2e1d;
     color:white;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav{display:none;}
+    .hero h1{font-size:34px;}
 }
 </style>
 </head>
@@ -122,49 +177,76 @@ footer{
 <header>
     <div class="logo">Greenmark 🌱</div>
     <nav>
-        <a href="#about">About</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Write It. 🌿<br>Plant It. 🌎<br>Grow It.</h1>
-    <p>Seed-infused recycled paper notebooks & notepads that turn into real plants. Sustainable but make it aesthetic.</p>
-    <a href="#products" class="btn">Explore Now</a>
-</section>
-
-<section id="about" class="section">
-    <h2>Why Greenmark?</h2>
-    <p style="margin-top:15px;">We don’t just sell stationery. We create impact. Every page you use becomes a plant. Zero waste. 100% vibe.</p>
+    <h1>Write it.<br>Plant it.<br>Watch it grow 🌿</h1>
+    <p>
+        Aesthetic seed-infused paper that turns into real plants.  
+        Sustainable but make it cute.
+    </p>
+    <a href="#products" class="cta">Shop via Instagram</a>
 </section>
 
 <section id="products" class="section">
-    <h2>Our Drops ✨</h2>
-    <div class="cards">
+    <h2>Our Eco Drops ✨</h2>
+
+    <div class="products">
+
         <div class="card">
-            <h3>🌱 Seed Notebooks</h3>
-            <p>Write your goals. Plant the pages. Watch them grow.</p>
+            <h3>🌱 Plantable Bookmarks</h3>
+            <p>Reads cute. Grows herbs.</p>
+            <a href="https://www.instagram.com/greenmarkeco?igsh=MW45NmYxcTVxN3Uycg==" target="_blank" class="buy">
+                Buy on Insta
+            </a>
         </div>
+
         <div class="card">
-            <h3>📒 Eco Notepads</h3>
-            <p>Daily notes, zero guilt. Sustainable productivity unlocked.</p>
+            <h3>📓 Bloom Notebooks</h3>
+            <p>Journal today. Plant tomorrow.</p>
+            <a href="https://www.instagram.com/greenmarkeco?igsh=MW45NmYxcTVxN3Uycg==" target="_blank" class="buy">
+                Buy on Insta
+            </a>
         </div>
+
         <div class="card">
-            <h3>🎁 Custom Gifts</h3>
-            <p>Corporate but make it green. Sustainable gifting that hits different.</p>
+            <h3>🎁 Eco Gift Packs</h3>
+            <p>Sustainable gifting that hits different.</p>
+            <a href="https://www.instagram.com/greenmarkeco?igsh=MW45NmYxcTVxN3Uycg==" target="_blank" class="buy">
+                DM for Orders
+            </a>
         </div>
+
     </div>
 </section>
 
 <section id="contact" class="section">
     <h2>Let’s Grow Together 🌍</h2>
-    <p style="margin-top:15px;">Collabs? Bulk orders? DM us.</p>
-    <a href="mailto:your@email.com" class="btn">Contact Us</a>
+
+    <div class="contact-links">
+        <a href="https://www.instagram.com/greenmarkeco?igsh=MW45NmYxcTVxN3Uycg==" target="_blank">
+            📸 Instagram
+        </a>
+
+        <a href="https://www.linkedin.com/in/greenmark-eco-79405b3a9" target="_blank">
+            💼 LinkedIn
+        </a>
+
+        <a href="tel:9550916365">
+            📞 9550916365
+        </a>
+
+        <a href="https://wa.me/919550916365" target="_blank">
+            💬 WhatsApp Us
+        </a>
+    </div>
 </section>
 
 <footer>
-    © 2026 Greenmark | Made with 🌿 for the planet
+    © 2026 Greenmark 🌿 Sustainable paper that grows
 </footer>
 
 </body>
